@@ -1,5 +1,6 @@
 package com.msemail.emailservice.models;
 
+import com.msemail.emailservice.enums.StatusDoEmail;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,13 +17,13 @@ public class EmailModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long emailID;
-    private String OwnerRef;
-    private String emailForm;
+    private Long emailId;
+    private String ownerRef;
+    private String emailFrom;
     private String emailTo;
     private String subject;
     @Column(columnDefinition = "TEXT")
-    private String text;
-    private LocalDateTime sendDataEmail;
-    private StatusEmail statusEmail;
+    private String payload;
+    private LocalDateTime sendDataTime;
+    private StatusDoEmail statusEmail;
 }
